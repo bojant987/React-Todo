@@ -27,7 +27,24 @@ module.exports = {
       return !todo.completed || showCompleted;
     });
     // filter by searchText
+    filteredTodos = filteredTodos.filter((todo) => {
+      if (searchText.length === 0) {
+        return true;
+      } else {
+        return (todo.text.toLowerCase().indexOf(searchText.toLowerCase()) !== -1) ? true : false;
+      }
+
+    });
     // sort todos with non completed first
+    filteredTodos.sort((a, b) => {
+      if (!a.completed && b.completed) {
+        return -1;
+      } else if (a.completed && !b.completed) {
+        return 1;
+      } else {
+        return 0;
+      }
+    });
     return filteredTodos;
   }
 };
