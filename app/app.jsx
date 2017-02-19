@@ -8,17 +8,9 @@ var actions = require("actions");
 var store = require("configureStore").configure();
 var TodoAPI = require("TodoAPI");
 
+store.dispatch(actions.startAddTodos());
 
 // load foundation, with loaders prefix and initialize it on next line
-store.subscribe(() => {
-  var state = store.getState();
-
-  TodoAPI.setTodos(state.todos);
-});
-
-var initialTodos = TodoAPI.getTodos();
-store.dispatch(actions.addTodos(initialTodos));
-
 $(document).foundation();
 // app.css
 require("style!css!sass!applicationStyles");
