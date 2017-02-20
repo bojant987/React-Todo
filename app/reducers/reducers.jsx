@@ -1,21 +1,19 @@
-var uuid = require("node-uuid");
-var moment = require("moment");
+var uuid = require('node-uuid');
+var moment = require('moment');
 
-export var searchTextReducer = (state = "", action) => {
+export var searchTextReducer = (state = '', action) => {
   switch (action.type) {
-    case "SET_SEARCH_TEXT":
+    case 'SET_SEARCH_TEXT':
       return action.searchText;
-      break;
     default:
       return state;
-  }
+  };
 };
 
 export var showCompletedReducer = (state = false, action) => {
   switch (action.type) {
-    case "TOGGLE_SHOW_COMPLETED":
+    case 'TOGGLE_SHOW_COMPLETED':
       return !state;
-      break;
     default:
       return state;
   }
@@ -23,12 +21,12 @@ export var showCompletedReducer = (state = false, action) => {
 
 export var todosReducer = (state = [], action) => {
   switch (action.type) {
-    case "ADD_TODO":
+    case 'ADD_TODO':
       return [
         ...state,
         action.todo
       ];
-    case "UPDATE_TODO":
+    case 'UPDATE_TODO':
       return state.map((todo) => {
         if (todo.id === action.id) {
           return {
@@ -39,11 +37,11 @@ export var todosReducer = (state = [], action) => {
           return todo;
         }
       });
-      case "ADD_TODOS":
-        return [
-          ...state,
-          ...action.todos
-        ];
+    case 'ADD_TODOS':
+      return [
+        ...state,
+        ...action.todos
+      ];
     default:
       return state;
   }

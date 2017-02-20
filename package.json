@@ -1,15 +1,15 @@
 {
   "name": "boilerplate",
   "version": "1.0.0",
-  "description": "react chapter 1",
+  "description": "Simple react app",
   "main": "index.js",
   "scripts": {
     "test": "NODE_ENV=test karma start",
     "build": "webpack",
     "start": "npm run build && node server.js"
   },
-  "author": "Bojan",
-  "license": "ISC",
+  "author": "Andrew Mead",
+  "license": "MIT",
   "dependencies": {
     "axios": "^0.9.1",
     "express": "^4.13.4",

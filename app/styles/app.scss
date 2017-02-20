@@ -5,7 +5,7 @@
 @import "foundation";
 @include foundation-everything;
 
-// components
-@import "components/todo";
-@import "components/page-title";
+// Components
 @import "components/container";
+@import "components/page-title";
+@import "components/todo";

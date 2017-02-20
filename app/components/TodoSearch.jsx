@@ -1,12 +1,12 @@
-var React = require("react");
-var {connect} = require("react-redux");
-var actions = require("actions");
+var React = require('react');
+var {connect} = require('react-redux');
+var actions = require('actions');
 
 export var TodoSearch = React.createClass({
-  render: function() {
+  render: function () {
     var {dispatch, showCompleted, searchText} = this.props;
 
-    return(
+    return (
       <div className="container__header">
         <div>
           <input type="search" ref="searchText" placeholder="Search todos" value={searchText} onChange={() => {
@@ -23,7 +23,7 @@ export var TodoSearch = React.createClass({
           </label>
         </div>
       </div>
-    );
+    )
   }
 });
 
@@ -32,6 +32,6 @@ export default connect(
     return {
       showCompleted: state.showCompleted,
       searchText: state.searchText
-    };
+    }
   }
 )(TodoSearch);

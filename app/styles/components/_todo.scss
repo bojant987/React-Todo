@@ -1,13 +1,14 @@
 .todo {
-  display: flex;
-  cursor: pointer;
   align-items: center;
+  cursor: pointer;
+  display: flex;
   padding: 1rem;
-  transition: background 0.3s ease;
+  transition: background .3s ease;
 
   p, input {
     margin: 0;
   }
+
   > :first-child {
     margin-right: 1rem;
   }
@@ -22,8 +23,8 @@
 }
 
 .todo-completed {
-  p, .todo__subtext {
+  p, .todo-subtext {
     color: $light-color;
-    text-decoration: line-through;;
+    text-decoration: line-through;
   }
 }
